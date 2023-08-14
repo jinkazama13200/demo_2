@@ -1,0 +1,58 @@
+.product {
+  margin-top: 100px;
+
+  .dropdown {
+    margin-bottom: 20px;
+    #selectBrand {
+      margin-bottom: 50px;
+      padding: 5px 30px;
+
+      @include responsive("small") {
+        width: 40%;
+      }
+
+      @include responsive("extra-large") {
+        width: 20%;
+      }
+      @include responsive("extra-extra-large") {
+        width: 20%;
+      }
+    }
+  }
+}
+.navbar-nav {
+  text-align: center;
+}
+
+#product-list {
+  .shoe-item {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    .card-header {
+      background-color: $color-white-3;
+      padding: 50px 0;
+      .card-img {
+        object-fit: contain;
+      }
+    }
+    .card-body {
+      .shoe-name {
+        font-weight: $fw-2;
+      }
+      .shoe-type {
+        padding: 3px 5px;
+        font-weight: $fw-2;
+        border-radius: 5px;
+        color: white;
+        display: inline-block;
+        background-color: black;
+      }
+    }
+    .card-footer {
+      background-color: $color-white-3;
+      .status {
+        font-weight: $fw-3;
+        color: green;
+      }
+    }
+  }
+}

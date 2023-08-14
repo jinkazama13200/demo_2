@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Jin Sneaker - Shopping</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+
+    <!-- FA6  -->
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- (Optional) Use CSS or JS implementation -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+      integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="shortcut icon"
+      href="../assets/img/1-15392_derrick-rose-logo-basketball-basketball-players-basketball-derrick.png"
+      type="image/x-icon"
+    />
+
+    <!-- MY CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+
+  <body id="myBody">
+    <!-- HEADER  -->
+    <header id="header">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="header-logo navbar-brand" href="#">
+            <img
+              src="../assets/img/1-15392_derrick-rose-logo-basketball-basketball-players-basketball-derrick.png"
+              alt="my-icon"
+              width="50px"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">All Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+            </ul>
+          </div>
+          <div class="cart-icon">
+            <button id="shopping">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </button>
+            <span id="quantity">0</span>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- product list  -->
+      <section class="product">
+        <div class="container">
+          <div class="dropdown">
+            <select
+              class="form-select"
+              name="selectBrand"
+              id="selectBrand"
+              onchange="selectBrands()"
+            >
+              <option value="default">All Brands</option>
+              <option value="Nike">Nike</option>
+              <option value="Bape">Bape</option>
+              <option value="Adidas">Adidas</option>
+            </select>
+          </div>
+          <div id="product-list" class="row gy-lg-4"></div>
+        </div>
+      </section>
+      <!-- shopping cart  -->
+      <section class="shopping-cart">
+        <div class="cart">
+          <div class="cart-header">
+            <h5 class="cart-title">Your Cart</h5>
+          </div>
+          <div class="cart-body">
+            <div class="cart-list"></div>
+            <p class="empty-note">Your cart is empty now...</p>
+          </div>
+          <div class="cart-footer">
+            <div class="total-content d-flex justify-content-between">
+              <p class="total-text">Total</p>
+              <p class="total-price"></p>
+            </div>
+            <button
+              onclick="purchaseItem()"
+              class="buy-button w-100 btn btn-dark mb-3"
+            >
+              Purchase
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../models/cartitem.js"></script>
+    <script src="../models/product.js"></script>
+    <script src="../services/productAPI.js"></script>
+    <script src="../controller/main.js"></script>
+  </body>
+</html>

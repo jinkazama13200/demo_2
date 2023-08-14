@@ -1,0 +1,75 @@
+header {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+}
+.header-logo {
+  margin: 0;
+  font-size: 30px;
+}
+
+.cart-icon {
+  position: absolute;
+  display: inline-block;
+  right: 100px;
+  z-index: 1;
+
+  @include responsive("small") {
+    right: 105px;
+  }
+
+  #shopping {
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    background: transparent;
+  }
+  #quantity {
+    font-size: $fs-1;
+    left: 15px;
+    position: absolute;
+    background-color: red;
+    width: 30px;
+    bottom: 20px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+  }
+}
+
+.nav-item {
+  font-weight: 500;
+  .nav-link {
+    &.active {
+      color: black;
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  .nav-link {
+    margin: 0 25px;
+    position: relative;
+    &::after {
+      content: "";
+      background-color: black;
+      width: 0px;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      transition: 0.5s;
+    }
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
